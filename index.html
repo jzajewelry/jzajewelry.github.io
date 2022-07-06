@@ -31,3 +31,25 @@
 		</footer>
 	</body>
 </html>
+<div data-block="minicart" class="minicart-wrapper">
+    <a class="action showcart" href="https://jzajewelry.github.io/checkout/cart/" data-bind="scope: 'minicart_content'">
+        <span class="text">My Cart</span>
+        <span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false &amp;&amp; !isLoading() }, blockLoader: isLoading">
+            <span class="counter-number"><!-- ko text: getCartParam('summary_count') -->0<!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+            </span>
+        </span>
+    </a>
+            <script>
+            require(['jquery'], function ($) {
+                $('a.action.showcart').click(function() {
+                    $(document.body).trigger('processStart');
+                });
+            });
+        </script>
+        <script>
+        window.checkout = {"shoppingCartUrl":"https:\/\/beadsfactory.com\/checkout\/cart\/","checkoutUrl":"jzajewelry.github.io\/checkout\/","updateItemQtyUrl":"https:\/\/jzajewelry.github.io\/checkout\/sidebar\/updateItemQty\/","removeItemUrl":"https:\/\/jzajewelry.github.io\/checkout\/sidebar\/removeItem\/","imageTemplate":"Magento_Catalog\/product\/image_with_borders","baseUrl":"https:\/\/jzajewelry.github.io\/","minicartMaxItemsVisible":5,"websiteId":"1","maxItemsToDisplay":10,"storeId":"1","storeGroupId":"1","customerLoginUrl":"https:\/\/jzajewelry.github.io\/customer\/account\/login\/referer\/aHR0cHM6Ly9iZWFkc2ZhY3RvcnkuY29tLw%2C%2C\/","isRedirectRequired":false,"autocomplete":"off","captcha":{"user_login":{"isCaseSensitive":false,"imageHeight":50,"imageSrc":"","refreshUrl":"https:\/\/beadsfactory.com\/captcha\/refresh\/","isRequired":false,"timestamp":1657125832}}};
+    </script>
+    
+</div>
